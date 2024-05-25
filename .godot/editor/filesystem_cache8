@@ -1,0 +1,15 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1716551746
+icon.svg::CompressedTexture2D::2470500221912720675::1716024293::1716024296::1::::<><>::
+main.cs::CSharpScript::-1::1716471696::0::1::::<>Node2D<>::
+node_2d.tscn::PackedScene::4058054075849542419::1716506544::0::1::::<><>::uid://cybx2bmeclfg0::::res://Asset/MainCharacter/MC_idle.png<>res://main.cs<>uid://ba1f0iv52ynyk::::res://Asset/MainCharacter/MC_run_01.png<>uid://bjp1i2tt86mix::::res://Asset/MainCharacter/MC_run_02.png
+::res://Asset/::1716465450
+Blank.png::CompressedTexture2D::2628560403351495392::1716465400::1716465450::1::::<><>::
+::res://Asset/Background/::1716459094
+Background.png::CompressedTexture2D::8536055057449057553::1716458433::1716459094::1::::<><>::
+::res://Asset/MainCharacter/::1716466134
+MC_idle.png::CompressedTexture2D::6460882770967955825::1716465446::1716465450::1::::<><>::
+MC_run_01.png::CompressedTexture2D::2440443189137906782::1716465624::1716466134::1::::<><>::
+MC_run_02.png::CompressedTexture2D::3050680319299798911::1716465686::1716466134::1::::<><>::
+MC_walk_01.png::CompressedTexture2D::9165542237798769990::1716465574::1716466134::1::::<><>::
+MC_walk_02.png::CompressedTexture2D::1991171959170722901::1716465700::1716466134::1::::<><>::

@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://bx20s70og5vot"]
+
+[ext_resource type="Texture2D" uid="uid://cybx2bmeclfg0" path="res://Asset/MainCharacter/MC_idle.png" id="1_krujp"]
+[ext_resource type="Script" path="res://main.cs" id="1_wti07"]
+[ext_resource type="Texture2D" uid="uid://ba1f0iv52ynyk" path="res://Asset/MainCharacter/MC_run_01.png" id="2_jtghe"]
+[ext_resource type="Texture2D" uid="uid://bjp1i2tt86mix" path="res://Asset/MainCharacter/MC_run_02.png" id="3_rax61"]
+[ext_resource type="Texture2D" uid="uid://d3t4e2vv2ae6i" path="res://Asset/MainCharacter/MC_walk_01.png" id="5_i7mnw"]
+[ext_resource type="Texture2D" uid="uid://3mskt2rq262l" path="res://Asset/MainCharacter/MC_walk_02.png" id="6_17i4s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qgxwb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_krujp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jtghe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rax61")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_i7mnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_17i4s")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_wti07")
+
+[node name="main_character" type="AnimatedSprite2D" parent="."]
+position = Vector2(285, 384)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_qgxwb")
+animation = &"idle"

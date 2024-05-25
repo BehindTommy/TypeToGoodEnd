@@ -1,0 +1,17 @@
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\obj\Debug\TypeToGoodEnd.csproj.AssemblyReference.cache
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\obj\Debug\TypeToGoodEnd.GeneratedMSBuildEditorConfig.editorconfig
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\obj\Debug\TypeToGoodEnd.AssemblyInfoInputs.cache
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\obj\Debug\TypeToGoodEnd.AssemblyInfo.cs
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\obj\Debug\TypeToGoodEnd.csproj.CoreCompileInputs.cache
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\bin\Debug\TypeToGoodEnd.deps.json
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\bin\Debug\TypeToGoodEnd.runtimeconfig.json
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\bin\Debug\TypeToGoodEnd.dll
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\bin\Debug\TypeToGoodEnd.pdb
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\bin\Debug\GodotSharp.dll
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\obj\Debug\TypeToGoodEnd.csproj.CopyComplete
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\obj\Debug\TypeToGoodEnd.dll
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\obj\Debug\refint\TypeToGoodEnd.dll
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\obj\Debug\TypeToGoodEnd.pdb
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\obj\Debug\TypeToGoodEnd.genruntimeconfig.cache
+E:\Godot_Projects\TypeToGoodEnd\.godot\mono\temp\obj\Debug\ref\TypeToGoodEnd.dll
