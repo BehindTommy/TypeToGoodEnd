@@ -93,11 +93,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\Godot_Projects\\TypeToGoodEnd\\TypeToGoodEnd.csproj",
+      "projectUniqueName": "C:\\Behind_Tommy\\GodotProject\\TypeToGoodEnd\\TypeToGoodEnd.csproj",
       "projectName": "TypeToGoodEnd",
-      "projectPath": "e:\\Godot_Projects\\TypeToGoodEnd\\TypeToGoodEnd.csproj",
+      "projectPath": "C:\\Behind_Tommy\\GodotProject\\TypeToGoodEnd\\TypeToGoodEnd.csproj",
       "packagesPath": "C:\\Users\\Behind Tommy\\.nuget\\packages\\",
-      "outputPath": "e:\\Godot_Projects\\TypeToGoodEnd\\.godot\\mono\\temp\\obj\\",
+      "outputPath": "C:\\Behind_Tommy\\GodotProject\\TypeToGoodEnd\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Behind Tommy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -120,6 +120,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -150,12 +155,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.29, 6.0.29]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.29, 6.0.29]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.29, 6.0.29]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.414\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -10,7 +10,7 @@ public partial class main : Node2D
 	public override void _Ready()
 	{
 		MC_sprite = GetNode<AnimatedSprite2D>("main_character");
-		MC_sprite.Play("idle");
+		MC_sprite.Play("run");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
