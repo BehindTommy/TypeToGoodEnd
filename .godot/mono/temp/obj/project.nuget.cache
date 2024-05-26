@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Ote6it4BX5GqoqagJsFXRY+A4BPph470CP8pxGu5wQPcZUFOGcBE6XMmEjy4qcJzFCZ6i7mCqc9qBGOXc3gaaA==",
+  "dgSpecHash": "x3RjUnIYnJcxxKiuqwkWKLm4y/0TktH6QKhvcBTPBEk9MWdmO2vplONkIp9lIV/1Rg3Y0QekUJfBaGxb4+0LtA==",
   "success": true,
-  "projectFilePath": "C:\\Behind_Tommy\\GodotProject\\TypeToGoodEnd\\TypeToGoodEnd.csproj",
+  "projectFilePath": "E:\\Godot_Projects\\TypeToGoodEnd\\TypeToGoodEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Behind Tommy\\.nuget\\packages\\godot.sourcegenerators\\4.2.2\\godot.sourcegenerators.4.2.2.nupkg.sha512",
     "C:\\Users\\Behind Tommy\\.nuget\\packages\\godotsharp\\4.2.2\\godotsharp.4.2.2.nupkg.sha512",
-    "C:\\Users\\Behind Tommy\\.nuget\\packages\\godotsharpeditor\\4.2.2\\godotsharpeditor.4.2.2.nupkg.sha512",
-    "C:\\Users\\Behind Tommy\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
-    "C:\\Users\\Behind Tommy\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
-    "C:\\Users\\Behind Tommy\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512"
+    "C:\\Users\\Behind Tommy\\.nuget\\packages\\godotsharpeditor\\4.2.2\\godotsharpeditor.4.2.2.nupkg.sha512"
   ],
   "logs": []
 }
