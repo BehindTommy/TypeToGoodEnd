@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx20s70og5vot"]
+[gd_scene load_steps=10 format=3 uid="uid://bkp5srev5sxh0"]
 
 [ext_resource type="Texture2D" uid="uid://cybx2bmeclfg0" path="res://Asset/MainCharacter/MC_idle.png" id="1_krujp"]
 [ext_resource type="Script" path="res://main.cs" id="1_wti07"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3t4e2vv2ae6i" path="res://Asset/MainCharacter/MC_walk_01.png" id="5_i7mnw"]
 [ext_resource type="Texture2D" uid="uid://3mskt2rq262l" path="res://Asset/MainCharacter/MC_walk_02.png" id="6_17i4s"]
 [ext_resource type="Script" path="res://input.cs" id="7_ox54b"]
+[ext_resource type="PackedScene" uid="uid://dw831avn88w8e" path="res://background_scroll.tscn" id="8_m4phw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qgxwb"]
 animations = [{
@@ -45,6 +46,7 @@ animations = [{
 script = ExtResource("1_wti07")
 
 [node name="main_character" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(285, 384)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_qgxwb")
@@ -59,6 +61,8 @@ text = "test button"
 
 [node name="Input(placeholder)" type="Node" parent="."]
 script = ExtResource("7_ox54b")
+
+[node name="Background_scroll" parent="." instance=ExtResource("8_m4phw")]
 
 [connection signal="pressed" from="Button" to="Input(placeholder)" method="_on_button_pressed"]
 [connection signal="set_move_speed" from="Input(placeholder)" to="." method="_on_input_set_move_speed"]

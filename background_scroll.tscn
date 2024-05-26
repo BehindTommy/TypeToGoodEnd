@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw831avn88w8e"]
+
+[ext_resource type="Script" path="res://background_scroll.cs" id="1_q7wga"]
+[ext_resource type="Texture2D" uid="uid://dtu6tydcpgs2t" path="res://Asset/Background/Background.png" id="2_ylswc"]
+[ext_resource type="Texture2D" uid="uid://fegw2dvgi6va" path="res://Asset/Background/Background_layer1.png" id="3_ogu1q"]
+
+[node name="Background_scroll" type="Node2D"]
+script = ExtResource("1_q7wga")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(540, 360)
+texture = ExtResource("2_ylswc")
+
+[node name="Background_Duplicated" type="Sprite2D" parent="."]
+position = Vector2(1620, 360)
+texture = ExtResource("2_ylswc")
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(540, 585)
+texture = ExtResource("3_ogu1q")
+
+[node name="BackgroundLayer1_Duplicated" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(1620, 585)
+texture = ExtResource("3_ogu1q")
