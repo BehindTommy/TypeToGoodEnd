@@ -1,7 +1,5 @@
-res://background.tscn
-res://node_2d.tscn
-res://input.cs
-res://main.cs
+res://main.tscn
 res://background_scroll.tscn
 res://background_scroll.cs
-res://main.tscn
+res://main.cs
+res://input.cs

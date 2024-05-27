@@ -8,19 +8,19 @@
 script = ExtResource("1_q7wga")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(540, 360)
+position = Vector2(640, 360)
 texture = ExtResource("2_ylswc")
 
-[node name="Background_Duplicated" type="Sprite2D" parent="."]
-position = Vector2(1620, 360)
+[node name="Background_Next" type="Sprite2D" parent="."]
+position = Vector2(1920, 360)
 texture = ExtResource("2_ylswc")
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="."]
 z_index = 5
-position = Vector2(540, 585)
+position = Vector2(640, 600)
 texture = ExtResource("3_ogu1q")
 
-[node name="BackgroundLayer1_Duplicated" type="Sprite2D" parent="."]
+[node name="BackgroundLayer1_Next" type="Sprite2D" parent="."]
 z_index = 5
-position = Vector2(1620, 585)
+position = Vector2(1920, 600)
 texture = ExtResource("3_ogu1q")

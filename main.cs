@@ -8,6 +8,8 @@ public partial class main : Node2D
 {
 	private AnimatedSprite2D MC_sprite;
 
+	[Signal]
+	public delegate void set_scrollEventHandler(uint newScrollSpeed, string nextMap);
 
 	[Export]
 	private uint move_speed { get; set; } = 0;
@@ -44,6 +46,7 @@ public partial class main : Node2D
 	private void _on_input_set_move_speed(uint newSpeed)
 	{
 		move_speed = newSpeed;
+		EmitSignal(SignalName.set_scroll,move_speed * 100, "abc");
 	}
 	// 	private void  _on_button_pressed()
 	// 	{

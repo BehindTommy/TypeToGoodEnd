@@ -53,6 +53,7 @@ sprite_frames = SubResource("SpriteFrames_qgxwb")
 animation = &"idle"
 
 [node name="Button" type="Button" parent="."]
+z_index = 1
 offset_left = 475.0
 offset_top = 363.0
 offset_right = 612.0
@@ -64,5 +65,6 @@ script = ExtResource("7_ox54b")
 
 [node name="Background_scroll" parent="." instance=ExtResource("8_m4phw")]
 
+[connection signal="set_scroll" from="." to="Background_scroll" method="_on_main_set_scroll"]
 [connection signal="pressed" from="Button" to="Input(placeholder)" method="_on_button_pressed"]
 [connection signal="set_move_speed" from="Input(placeholder)" to="." method="_on_input_set_move_speed"]
