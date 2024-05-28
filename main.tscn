@@ -52,19 +52,14 @@ scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_qgxwb")
 animation = &"idle"
 
-[node name="Button" type="Button" parent="."]
-z_index = 1
-offset_left = 475.0
-offset_top = 363.0
-offset_right = 612.0
-offset_bottom = 440.0
-text = "test button"
-
-[node name="Input(placeholder)" type="Node" parent="."]
+[node name="Input" type="TextEdit" parent="."]
+z_index = 10
+offset_right = 1000.0
+offset_bottom = 100.0
+scale = Vector2(1, 0.989607)
 script = ExtResource("7_ox54b")
 
 [node name="Background_scroll" parent="." instance=ExtResource("8_m4phw")]
 
 [connection signal="set_scroll" from="." to="Background_scroll" method="_on_main_set_scroll"]
-[connection signal="pressed" from="Button" to="Input(placeholder)" method="_on_button_pressed"]
-[connection signal="set_move_speed" from="Input(placeholder)" to="." method="_on_input_set_move_speed"]
+[connection signal="set_move_speed" from="Input" to="." method="_on_input_set_move_speed"]

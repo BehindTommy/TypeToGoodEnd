@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cxnkn54rppnn0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 1193.0
+offset_bottom = 673.0
+text = "what?"
+placeholder_text = "placeholder"
+deselect_on_focus_loss_enabled = false

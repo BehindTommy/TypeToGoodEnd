@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TypeToGoodEnd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+536f5e850e3fd4a0fd160b597204266dd929dbe1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13a4ce5dfde5f701489b7c080a6e38a0f9bc00f8")]
 [assembly: System.Reflection.AssemblyProductAttribute("TypeToGoodEnd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TypeToGoodEnd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
