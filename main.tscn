@@ -53,10 +53,10 @@ sprite_frames = SubResource("SpriteFrames_qgxwb")
 animation = &"idle"
 
 [node name="Input" type="TextEdit" parent="."]
-z_index = 10
 offset_right = 1000.0
 offset_bottom = 100.0
 scale = Vector2(1, 0.989607)
+placeholder_text = "藏在背景后面的文本框"
 script = ExtResource("7_ox54b")
 
 [node name="Background_scroll" parent="." instance=ExtResource("8_m4phw")]
