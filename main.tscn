@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkp5srev5sxh0"]
+[gd_scene load_steps=12 format=3 uid="uid://bkp5srev5sxh0"]
 
 [ext_resource type="Texture2D" uid="uid://cybx2bmeclfg0" path="res://Asset/MainCharacter/MC_idle.png" id="1_krujp"]
 [ext_resource type="Script" path="res://main.cs" id="1_wti07"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://3mskt2rq262l" path="res://Asset/MainCharacter/MC_walk_02.png" id="6_17i4s"]
 [ext_resource type="Script" path="res://input.cs" id="7_ox54b"]
 [ext_resource type="PackedScene" uid="uid://dw831avn88w8e" path="res://background_scroll.tscn" id="8_m4phw"]
+[ext_resource type="Script" path="res://Subtitle_Default.cs" id="9_3ig6f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qgxwb"]
 animations = [{
@@ -42,6 +43,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_n5hjg"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0.5015, 0.733833, 0.85, 1)
+shadow_size = 2
+shadow_color = Color(0.641934, 0.641934, 0.641934, 0.219608)
+shadow_offset = Vector2(5, 5)
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_wti07")
 
@@ -56,10 +66,39 @@ animation = &"idle"
 offset_right = 1000.0
 offset_bottom = 100.0
 scale = Vector2(1, 0.989607)
-placeholder_text = "藏在背景后面的文本框"
+placeholder_text = "(placeholder) 藏在背景后面的文本框"
 script = ExtResource("7_ox54b")
 
-[node name="Background_scroll" parent="." instance=ExtResource("8_m4phw")]
+[node name="Background_Scroll" parent="." instance=ExtResource("8_m4phw")]
 
-[connection signal="set_scroll" from="." to="Background_scroll" method="_on_main_set_scroll"]
+[node name="Subtitle_Default" type="Label" parent="."]
+z_index = 10
+offset_left = 32.0
+offset_top = 208.0
+offset_right = 1250.0
+offset_bottom = 713.0
+text = "subtitle (placeholder)"
+label_settings = SubResource("LabelSettings_n5hjg")
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("9_3ig6f")
+
+[node name="Subtitle_Completed" type="Label" parent="Subtitle_Default"]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_right = 1218.0
+offset_bottom = 505.0
+text = "事实上"
+label_settings = SubResource("LabelSettings_n5hjg")
+
+[node name="Subtitle_Miss" type="Label" parent="Subtitle_Default"]
+visible = false
+z_index = 10
+offset_right = 1218.0
+offset_bottom = 505.0
+text = "事实上"
+label_settings = SubResource("LabelSettings_n5hjg")
+
+[connection signal="set_scroll" from="." to="Background_Scroll" method="_on_main_set_scroll"]
 [connection signal="set_move_speed" from="Input" to="." method="_on_input_set_move_speed"]

@@ -12,11 +12,15 @@ public partial class input : TextEdit
 
 	// private uint move_speed = 0;
 	private string input_text;
-	private string target_text = "事实上";
+	private string target_text = Godot.FileAccess.GetFileAsString("res://Asset/target_text.txt");
+	// private string target_text = "事实上";
+	
+    
 	private int i, targat_pin=0;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GD.Print(target_text);
 		GrabFocus();
 		move_speed = 1;
 	}
@@ -29,7 +33,7 @@ public partial class input : TextEdit
 		for(i = 0; i < input_text.Length; i++)
 		{
 			GD.Print(input_text[i] + "-" + target_text[i + targat_pin]);
-			GD.Print(targat_pin);
+			// GD.Print(targat_pin);
 			if(input_text[i] == target_text[i + targat_pin])
 			{
 				GD.Print("correct");

@@ -1,12 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717051906
+::res://::1717142287
 background_scroll.cs::CSharpScript::-1::1716782962::0::1::::<>Node2D<>::
-background_scroll.tscn::PackedScene::8773287616515952438::1716974235::0::1::::<><>::res://background_scroll.cs<>uid://dtu6tydcpgs2t::::res://Asset/Background/Background.png<>uid://fegw2dvgi6va::::res://Asset/Background/Background_layer1.png
+background_scroll.tscn::PackedScene::8773287616515952438::1717069929::0::1::::<><>::res://background_scroll.cs<>uid://dtu6tydcpgs2t::::res://Asset/Background/Background.png<>uid://fegw2dvgi6va::::res://Asset/Background/Background_layer1.png
 icon.svg::CompressedTexture2D::2470500221912720675::1716618382::1716618486::1::::<><>::
-input.cs::CSharpScript::-1::1716974284::0::1::::<>Control<>::
+input.cs::CSharpScript::-1::1717069878::0::1::::<>TextEdit<>::
 main.cs::CSharpScript::-1::1716782695::0::1::::<>Node2D<>::
-main.tscn::PackedScene::3121129340528742003::1716974235::0::1::::<><>::uid://cybx2bmeclfg0::::res://Asset/MainCharacter/MC_idle.png<>res://main.cs<>uid://ba1f0iv52ynyk::::res://Asset/MainCharacter/MC_run_01.png<>uid://bjp1i2tt86mix::::res://Asset/MainCharacter/MC_run_02.png<>uid://d3t4e2vv2ae6i::::res://Asset/MainCharacter/MC_walk_01.png<>uid://3mskt2rq262l::::res://Asset/MainCharacter/MC_walk_02.png<>res://input.cs<>uid://dw831avn88w8e::::res://background_scroll.tscn
-node_2d.tscn::PackedScene::6414653688405037007::1716974235::0::1::::<><>::
+main.tscn::PackedScene::3121129340528742003::1717069976::0::1::::<><>::uid://cybx2bmeclfg0::::res://Asset/MainCharacter/MC_idle.png<>res://main.cs<>uid://ba1f0iv52ynyk::::res://Asset/MainCharacter/MC_run_01.png<>uid://bjp1i2tt86mix::::res://Asset/MainCharacter/MC_run_02.png<>uid://d3t4e2vv2ae6i::::res://Asset/MainCharacter/MC_walk_01.png<>uid://3mskt2rq262l::::res://Asset/MainCharacter/MC_walk_02.png<>res://input.cs<>uid://dw831avn88w8e::::res://background_scroll.tscn
+node_2d.tscn::PackedScene::6414653688405037007::1717069929::0::1::::<><>::
 README.md::TextFile::-1::1716618382::0::1::::<><>::
 ::res://Asset/::1716618382
 Blank.png::CompressedTexture2D::2628560403351495392::1716618382::1716618382::1::::<><>::
