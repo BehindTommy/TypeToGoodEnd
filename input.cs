@@ -5,7 +5,9 @@ using System.IO;
 public partial class input : TextEdit
 {
 	[Signal]
-	public delegate void set_move_speedEventHandler(uint newSpeed);
+	public delegate void set_move_speedEventHandler(int newSpeed);
+	[Signal]
+	public delegate void subtitle_changeEventHandler(int subtitle_pin, string effect_type);
 
 	[Export]
 	public uint move_speed;
@@ -42,12 +44,14 @@ public partial class input : TextEdit
 			{
 				GD.Print("wrong");
 				targat_pin += i;
+				EmitSignal(SignalName.subtitle_change, targat_pin, "WRONG");
 				input_text.Remove(0);
 				break;
 			}
 			if(i == input_text.Length-1)
 			{
 				targat_pin += i+1;
+				EmitSignal(SignalName.subtitle_change, targat_pin, "CORRECT");
 				break;
 			}
 		}
@@ -55,6 +59,7 @@ public partial class input : TextEdit
 		{
 			GD.Print("win");
 			targat_pin = 0;
+			EmitSignal(SignalName.subtitle_change, targat_pin, "CLEAR");
 			//win the game
 		}
 

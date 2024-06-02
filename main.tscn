@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkp5srev5sxh0"]
+[gd_scene load_steps=13 format=3 uid="uid://bkp5srev5sxh0"]
 
 [ext_resource type="Texture2D" uid="uid://cybx2bmeclfg0" path="res://Asset/MainCharacter/MC_idle.png" id="1_krujp"]
 [ext_resource type="Script" path="res://main.cs" id="1_wti07"]
@@ -52,6 +52,11 @@ shadow_size = 2
 shadow_color = Color(0.641934, 0.641934, 0.641934, 0.219608)
 shadow_offset = Vector2(5, 5)
 
+[sub_resource type="LabelSettings" id="LabelSettings_i523r"]
+font_size = 40
+outline_size = 6
+outline_color = Color(0.56, 0, 0.56, 1)
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_wti07")
 
@@ -73,32 +78,24 @@ script = ExtResource("7_ox54b")
 
 [node name="Subtitle_Default" type="Label" parent="."]
 z_index = 10
-offset_left = 32.0
-offset_top = 208.0
-offset_right = 1250.0
-offset_bottom = 713.0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 1418.0
+offset_bottom = 705.0
 text = "subtitle (placeholder)"
 label_settings = SubResource("LabelSettings_n5hjg")
-horizontal_alignment = 1
 vertical_alignment = 2
 script = ExtResource("9_3ig6f")
 
 [node name="Subtitle_Completed" type="Label" parent="Subtitle_Default"]
-visible = false
 z_index = 10
-layout_mode = 0
+offset_top = -45.0
 offset_right = 1218.0
-offset_bottom = 505.0
-text = "事实上"
-label_settings = SubResource("LabelSettings_n5hjg")
-
-[node name="Subtitle_Miss" type="Label" parent="Subtitle_Default"]
-visible = false
-z_index = 10
-offset_right = 1218.0
-offset_bottom = 505.0
-text = "事实上"
-label_settings = SubResource("LabelSettings_n5hjg")
+offset_bottom = 460.0
+text = "subtitle (placeholder)"
+label_settings = SubResource("LabelSettings_i523r")
+vertical_alignment = 2
 
 [connection signal="set_scroll" from="." to="Background_Scroll" method="_on_main_set_scroll"]
 [connection signal="set_move_speed" from="Input" to="." method="_on_input_set_move_speed"]
+[connection signal="subtitle_change" from="Input" to="Subtitle_Default" method="_on_input_subtitle_change"]
