@@ -16,7 +16,7 @@ public partial class input : TextEdit
 	private string input_text;
 	private string target_text = Godot.FileAccess.GetFileAsString("res://Asset/target_text.txt");
 	// private string target_text = "事实上";
-	
+	private int speed_counter=0;
     
 	private int i, targat_pin=0;
 	// Called when the node enters the scene tree for the first time.
@@ -31,36 +31,48 @@ public partial class input : TextEdit
 	public override void _Process(double delta)
 	{
 		input_text = GetWordAtPos(Vector2.Zero);
-		// if(input_text.Substring(1,1) == target_text.Substring(1,1))
 		for(i = 0; i < input_text.Length; i++)
 		{
-			GD.Print(input_text[i] + "-" + target_text[i + targat_pin]);
+			// GD.Print(input_text[i] + "-" + target_text[i + targat_pin]);
 			// GD.Print(targat_pin);
 			if(input_text[i] == target_text[i + targat_pin])
 			{
-				GD.Print("correct");
+				// GD.Print("correct");
+				// this character is right, check the next charracter.
+				speed_counter++;
 			}
 			else
 			{
-				GD.Print("wrong");
 				targat_pin += i;
 				EmitSignal(SignalName.subtitle_change, targat_pin, "WRONG");
-				input_text.Remove(0);
+				// GD.Print("send WRONG signal");
+				// speed_counter only collect the correct characters
+				EmitSignal(SignalName.set_move_speed, speed_counter);
+				speed_counter = 0;
+
+				input_text.Remove(0);//clear text box
 				break;
 			}
 			if(i == input_text.Length-1)
 			{
 				targat_pin += i+1;
 				EmitSignal(SignalName.subtitle_change, targat_pin, "CORRECT");
+				// GD.Print("send correct signal");
+				// speed_counter collect all characters
+				EmitSignal(SignalName.set_move_speed, speed_counter);
+				speed_counter = 0;
+
 				break;
 			}
 		}
 		if(targat_pin == target_text.Length)
 		{
-			GD.Print("win");
 			targat_pin = 0;
 			EmitSignal(SignalName.subtitle_change, targat_pin, "CLEAR");
-			//win the game
+			// GD.Print("send CLEAR signal");
+			// a CORRECT signal has been sent, so speed_counter not needed now.
+
+			// win the game (only this line)
 		}
 
 		Clear();

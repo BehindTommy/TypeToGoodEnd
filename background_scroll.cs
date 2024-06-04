@@ -67,6 +67,6 @@ public partial class background_scroll : Node2D
 	{
 		scroll_speed = newScrollSpeed;
 		next_map = nextMap;
-		GD.Print(next_map);
+		GD.Print("next map: " + next_map);
 	}
 }

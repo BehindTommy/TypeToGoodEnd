@@ -45,12 +45,8 @@ public partial class main : Node2D
 
 	private void _on_input_set_move_speed(uint newSpeed)
 	{
-		move_speed = newSpeed;
-		EmitSignal(SignalName.set_scroll,move_speed * 100, "abc");
+		// move_speed = newSpeed;
+		GD.Print(newSpeed);
+		// EmitSignal(SignalName.set_scroll,move_speed * 100, "abc");
 	}
-	// 	private void  _on_button_pressed()
-	// 	{
-	// 		// EmitSignal(SignalName.set_move_speed, 2);
-	// 		move_speed = 2;
-	// 	}
 }
