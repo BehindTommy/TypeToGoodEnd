@@ -12,7 +12,7 @@ public partial class main : Node2D
 	public delegate void set_scrollEventHandler(uint newScrollSpeed, string nextMap);
 
 	[Export]
-	private uint move_speed { get; set; } = 0;
+	private double move_speed = 0;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -24,29 +24,34 @@ public partial class main : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (move_speed == 0)
+		move_speed -= delta/5.0;
+		if (move_speed <= 0)
 		{
 			MC_sprite.Play("idle");
+			EmitSignal(SignalName.set_scroll, 0, "a");
 		}
-		else if (move_speed == 1)
+		else if (move_speed < 2)
 		{
 			MC_sprite.Play("walk");
+			EmitSignal(SignalName.set_scroll, 100, "b");
 		}
-		else if (move_speed == 2)
+		else if (move_speed >= 2)
 		{
 			MC_sprite.Play("run");
+			EmitSignal(SignalName.set_scroll, 200, "c");
 		}
 		else
 		{
-			GD.Print("invalied value of *" + nameof(move_speed) + "*");
+			GD.PrintErr("invalied value of *" + nameof(move_speed) + "*");
 			move_speed = 0;
 		}
 	}
 
-	private void _on_input_set_move_speed(uint newSpeed)
+/* character_count is the number of characters inputed this time
+*/
+	private void _on_input_set_move_speed(int character_count)
 	{
-		// move_speed = newSpeed;
-		GD.Print(newSpeed);
-		// EmitSignal(SignalName.set_scroll,move_speed * 100, "abc");
+		move_speed += character_count;
+		GD.Print(character_count);
 	}
 }
