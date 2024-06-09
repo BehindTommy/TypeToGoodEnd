@@ -1,28 +1,52 @@
 using Godot;
 using System;
 using System.IO;
+using System.Xml;
 
 public partial class input : TextEdit
 {
 	[Signal]
 	public delegate void set_move_speedEventHandler(int newSpeed);
 	[Signal]
-	public delegate void subtitle_changeEventHandler(int subtitle_pin, string effect_type);
+	public delegate void subtitle_changeEventHandler(string subtitle_text, int subtitle_pin, string effect_type);
+
 
 	[Export]
-	public uint move_speed;
+	public uint move_speed=0;
 
-	// private uint move_speed = 0;
 	private string input_text;
-	private string target_text = Godot.FileAccess.GetFileAsString("res://Asset/target_text.txt");
-	// private string target_text = "事实上";
+	private string target_text;
+	// private string target_text = Godot.FileAccess.GetFileAsString("res://Asset/target_text.txt");
+	private XmlParser parser = new XmlParser();
+
 	private int speed_counter=0;
     
 	private int i, targat_pin=0;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		GD.Print(target_text);
+		parser.Open("res://Asset/target_text.xml");
+		while (parser.Read() != Error.FileEof)
+		{
+			switch(parser.GetNodeType())
+			{
+				case XmlParser.NodeType.Element:
+					GD.Print(parser.GetNodeName());
+				break;
+				case XmlParser.NodeType.Text:
+					GD.Print(parser.GetNodeData());
+				break;
+				case XmlParser.NodeType.ElementEnd:
+					GD.Print("\\" + parser.GetNodeName());
+				break;
+				default:
+				break;
+			}
+		}
+
+		target_text = "text";
+		// // target_text = parser.GetNodeName();
+
 		GrabFocus();
 		move_speed = 1;
 	}
@@ -44,7 +68,7 @@ public partial class input : TextEdit
 			else
 			{
 				targat_pin += i;
-				EmitSignal(SignalName.subtitle_change, targat_pin, "WRONG");
+				EmitSignal(SignalName.subtitle_change, target_text, targat_pin, "WRONG");
 				// GD.Print("send WRONG signal");
 				// speed_counter only collect the correct characters
 				EmitSignal(SignalName.set_move_speed, speed_counter);
@@ -56,7 +80,7 @@ public partial class input : TextEdit
 			if(i == input_text.Length-1)
 			{
 				targat_pin += i+1;
-				EmitSignal(SignalName.subtitle_change, targat_pin, "CORRECT");
+				EmitSignal(SignalName.subtitle_change, target_text, targat_pin, "CORRECT");
 				// GD.Print("send correct signal");
 				// speed_counter collect all characters
 				EmitSignal(SignalName.set_move_speed, speed_counter);
@@ -68,7 +92,7 @@ public partial class input : TextEdit
 		if(targat_pin == target_text.Length)
 		{
 			targat_pin = 0;
-			EmitSignal(SignalName.subtitle_change, targat_pin, "CLEAR");
+			EmitSignal(SignalName.subtitle_change, target_text, targat_pin, "CLEAR");
 			// GD.Print("send CLEAR signal");
 			// a CORRECT signal has been sent, so speed_counter not needed now.
 

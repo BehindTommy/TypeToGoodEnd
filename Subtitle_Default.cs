@@ -4,7 +4,8 @@ using System;
 public partial class Subtitle_Default : Label
 {
 	Label Complete_effect;
-	private string target_text = Godot.FileAccess.GetFileAsString("res://Asset/target_text.txt");
+	private string target_text;
+
 	int complete_pin = 0;
 	double wrong_flag = 0;
 
@@ -12,8 +13,6 @@ public partial class Subtitle_Default : Label
 	public override void _Ready()
 	{
 		Complete_effect = GetNode<Label>("Subtitle_Completed");
-		Text = target_text;
-		Complete_effect.Text = Text[..complete_pin];
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,8 +36,11 @@ CORRECT - when the game input get a correct input
 WRONG   - when the game get a wrong input
 CLEAR   - when this line of text is over and should display next line
 */
-	private void _on_input_subtitle_change(int subtitle_pin, string effect_type)
+	private void _on_input_subtitle_change(string subtitle_text, int subtitle_pin, string effect_type)
 	{
+		// GD.Print(target_text);
+		Text = target_text;
+
 		complete_pin = subtitle_pin;
 
 		switch(effect_type)

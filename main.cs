@@ -7,6 +7,7 @@ using System;
 public partial class main : Node2D
 {
 	private AnimatedSprite2D MC_sprite;
+	// private int journey_length = 1000;
 
 	[Signal]
 	public delegate void set_scrollEventHandler(uint newScrollSpeed, string nextMap);
@@ -30,13 +31,19 @@ public partial class main : Node2D
 			MC_sprite.Play("idle");
 			EmitSignal(SignalName.set_scroll, 0, "a");
 		}
-		else if (move_speed < 2)
+		else if (move_speed < 1)
 		{
 			MC_sprite.Play("walk");
 			EmitSignal(SignalName.set_scroll, 100, "b");
 		}
-		else if (move_speed >= 2)
+		else if (move_speed <= 3)
 		{
+			MC_sprite.Play("run");
+			EmitSignal(SignalName.set_scroll, 200, "c");
+		}
+		else if(move_speed > 3)
+		{
+			move_speed = 3;
 			MC_sprite.Play("run");
 			EmitSignal(SignalName.set_scroll, 200, "c");
 		}
