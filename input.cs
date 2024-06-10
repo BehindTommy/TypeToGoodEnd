@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 
@@ -12,38 +13,59 @@ public partial class input : TextEdit
 
 
 	[Export]
-	public uint move_speed=0;
+	public uint move_speed = 0;
 
 	private string input_text;
 	private string target_text;
 	// private string target_text = Godot.FileAccess.GetFileAsString("res://Asset/target_text.txt");
-	private XmlParser parser = new XmlParser();
+	private XmlParser parser = new();
+	private List<string> text_contact = new();
+	private int speed_counter = 0;
 
-	private int speed_counter=0;
-    
-	private int i, targat_pin=0;
+	private int i, targat_pin = 0;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GD.Print("start load");
 		parser.Open("res://Asset/target_text.xml");
 		while (parser.Read() != Error.FileEof)
 		{
-			switch(parser.GetNodeType())
+			switch (parser.GetNodeType())
 			{
 				case XmlParser.NodeType.Element:
-					GD.Print(parser.GetNodeName());
-				break;
+					// GD.Print(parser.GetNodeName());
+					if (parser.GetNodeName() == "paragraph")
+					{
+						// GD.Print(parser.GetAttributeValue(0));
+						text_contact.Add(parser.GetAttributeValue(0));
+					}
+					// GD.Print(parser.GetNodeOffset());
+					break;
 				case XmlParser.NodeType.Text:
-					GD.Print(parser.GetNodeData());
-				break;
+					if (!String.IsNullOrWhiteSpace(parser.GetNodeData()))
+					{
+						// GD.Print(parser.GetNodeData());
+						text_contact.Add(parser.GetNodeData());
+					}
+					// GD.Print(parser.GetNodeOffset());
+					break;
 				case XmlParser.NodeType.ElementEnd:
-					GD.Print("\\" + parser.GetNodeName());
-				break;
+					// GD.Print("\\" + parser.GetNodeName());
+					if (parser.GetNodeName() == "paragraph")
+					{
+						// GD.Print(parser.GetAttributeValue(0));
+					}
+					// GD.Print(parser.GetNodeOffset());
+					break;
 				default:
-				break;
+					break;
 			}
 		}
-
+		GD.Print(text_contact[0]);
+		GD.Print(text_contact[1]);
+		GD.Print(text_contact[2]);
+		GD.Print(text_contact[3]);
+		GD.Print(text_contact[4]);
 		target_text = "text";
 		// // target_text = parser.GetNodeName();
 
@@ -55,11 +77,11 @@ public partial class input : TextEdit
 	public override void _Process(double delta)
 	{
 		input_text = GetWordAtPos(Vector2.Zero);
-		for(i = 0; i < input_text.Length; i++)
+		for (i = 0; i < input_text.Length; i++)
 		{
 			// GD.Print(input_text[i] + "-" + target_text[i + targat_pin]);
 			// GD.Print(targat_pin);
-			if(input_text[i] == target_text[i + targat_pin])
+			if (input_text[i] == target_text[i + targat_pin])
 			{
 				// GD.Print("correct");
 				// this character is right, check the next charracter.
@@ -77,9 +99,9 @@ public partial class input : TextEdit
 				input_text.Remove(0);//clear text box
 				break;
 			}
-			if(i == input_text.Length-1)
+			if (i == input_text.Length - 1)
 			{
-				targat_pin += i+1;
+				targat_pin += i + 1;
 				EmitSignal(SignalName.subtitle_change, target_text, targat_pin, "CORRECT");
 				// GD.Print("send correct signal");
 				// speed_counter collect all characters
@@ -89,7 +111,7 @@ public partial class input : TextEdit
 				break;
 			}
 		}
-		if(targat_pin == target_text.Length)
+		if (targat_pin == target_text.Length)
 		{
 			targat_pin = 0;
 			EmitSignal(SignalName.subtitle_change, target_text, targat_pin, "CLEAR");
@@ -102,7 +124,7 @@ public partial class input : TextEdit
 		Clear();
 	}
 	//get_word_at_pos
-	
+
 	// private void  _on_button_pressed()
 	// {
 	// 	EmitSignal(SignalName.set_move_speed, 2);

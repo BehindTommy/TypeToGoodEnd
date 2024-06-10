@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<contact> 
-	<param name="default" class="default"> 
-		<line01>"1事实上，就是这样的"</line01>  
-		<line02>"2事实上，就是这样的"</line02> 
-	</param> 
+<contact>
+	<paragraph name="default">
+		<line>"1事实上，就是这样的"</line>
+		<line>"2事实上，就是这样的"</line>
+	</paragraph>
+	<paragraph name="P01">
+		<line>"3事实上，就是这样的"</line>
+		<line>"4事实上，就是这样的"</line>
+	</paragraph>
 </contact>
