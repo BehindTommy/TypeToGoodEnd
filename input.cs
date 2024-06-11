@@ -15,15 +15,15 @@ public partial class input : TextEdit
 	[Export]
 	public uint move_speed = 0;
 
-	private string input_text;
-	private string target_text;
-	// private string target_text = Godot.FileAccess.GetFileAsString("res://Asset/target_text.txt");
-	private XmlParser parser = new();
-	private List<string> text_contact = new();
-	private int speed_counter = 0;
+	private string input_text;//the text just inputed by player
+	private string target_text;//the line of text need to be completed now
+	private XmlParser parser = new();//to read .xml file contains all text
+	private List<string> text_contact = new();//to keep all text read from .xml file
+	private int text_contact_pin = 0;//to pin where target_text shoud be in text_contact
+	private int speed_counter = 0;//how fast character move and map scroll
 
-	private int i, targat_pin = 0;
-	// Called when the node enters the scene tree for the first time.
+	private int i, targat_pin = 0;//which character is inputed in target_text
+
 	public override void _Ready()
 	{
 		GD.Print("start load");
@@ -54,6 +54,7 @@ public partial class input : TextEdit
 					if (parser.GetNodeName() == "paragraph")
 					{
 						// GD.Print(parser.GetAttributeValue(0));
+						text_contact.Add("E.O.P.");
 					}
 					// GD.Print(parser.GetNodeOffset());
 					break;
@@ -61,13 +62,13 @@ public partial class input : TextEdit
 					break;
 			}
 		}
-		GD.Print(text_contact[0]);
-		GD.Print(text_contact[1]);
-		GD.Print(text_contact[2]);
-		GD.Print(text_contact[3]);
-		GD.Print(text_contact[4]);
-		target_text = "text";
-		// // target_text = parser.GetNodeName();
+		// GD.Print(text_contact.IndexOf("main02"));
+		text_contact_pin = text_contact.IndexOf("main01") + 1;
+		// GD.Print(text_contact[text_contact.IndexOf("main01")+1]);
+		target_text = text_contact[text_contact_pin];
+
+		//init subtitle
+		EmitSignal(SignalName.subtitle_change, target_text, targat_pin, "CLEAR");
 
 		GrabFocus();
 		move_speed = 1;
@@ -111,24 +112,20 @@ public partial class input : TextEdit
 				break;
 			}
 		}
-		if (targat_pin == target_text.Length)
+		if (targat_pin == target_text.Length)//this line has completed, change to next line
 		{
 			targat_pin = 0;
+			if(text_contact[++text_contact_pin] == "E.O.P.")//the whole paragraph has completed, change to next paragraph
+			{
+				text_contact_pin = text_contact.IndexOf("main02") + 1;
+			}
+			target_text = text_contact[text_contact_pin];
 			EmitSignal(SignalName.subtitle_change, target_text, targat_pin, "CLEAR");
 			// GD.Print("send CLEAR signal");
 			// a CORRECT signal has been sent, so speed_counter not needed now.
 
-			// win the game (only this line)
 		}
 
 		Clear();
 	}
-	//get_word_at_pos
-
-	// private void  _on_button_pressed()
-	// {
-	// 	EmitSignal(SignalName.set_move_speed, 2);
-	// 	move_speed = 2;
-	// 	GD.Print(move_speed);
-	// }
 }

@@ -4,7 +4,6 @@ using System;
 public partial class Subtitle_Default : Label
 {
 	Label Complete_effect;
-	private string target_text;
 
 	int complete_pin = 0;
 	double wrong_flag = 0;
@@ -39,7 +38,8 @@ CLEAR   - when this line of text is over and should display next line
 	private void _on_input_subtitle_change(string subtitle_text, int subtitle_pin, string effect_type)
 	{
 		// GD.Print(target_text);
-		Text = target_text;
+		Text = subtitle_text;
+		GD.Print(subtitle_text);
 
 		complete_pin = subtitle_pin;
 
