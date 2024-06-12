@@ -40,7 +40,7 @@ public partial class background_scroll : Node2D
 			layer_1_D.Position += 2 * origin_position * Vector2.Right;
 			if(next_map == "default")
 			{
-				
+				layer_1_D.Texture = (Texture2D)GD.Load("res://Asset/Background/Background_layer1.png");
 			}
 			else
 			{
@@ -54,7 +54,7 @@ public partial class background_scroll : Node2D
 			layer_2_D.Position += 2 * origin_position * Vector2.Right;
 			if(next_map == "default")
 			{
-				
+				layer_2_D.Texture = (Texture2D)GD.Load("res://Asset/Background/Background.png");
 			}
 			else
 			{

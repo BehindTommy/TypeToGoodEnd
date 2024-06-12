@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://background_scroll.cs" id="1_q7wga"]
 [ext_resource type="Texture2D" uid="uid://dtu6tydcpgs2t" path="res://Asset/Background/Background.png" id="2_ylswc"]
-[ext_resource type="Texture2D" uid="uid://fegw2dvgi6va" path="res://Asset/Background/Background_layer1.png" id="3_ogu1q"]
+[ext_resource type="Texture2D" uid="uid://cdc32vhdd36ex" path="res://Asset/Background/Background_layer1.png" id="3_ogu1q"]
 
 [node name="Background_Scroll" type="Node2D"]
 script = ExtResource("1_q7wga")

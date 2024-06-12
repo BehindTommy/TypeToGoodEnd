@@ -39,7 +39,7 @@ CLEAR   - when this line of text is over and should display next line
 	{
 		// GD.Print(target_text);
 		Text = subtitle_text;
-		GD.Print(subtitle_text);
+		// GD.Print(subtitle_text);
 
 		complete_pin = subtitle_pin;
 

@@ -61,7 +61,7 @@ outline_color = Color(0.56, 0, 0.56, 1)
 script = ExtResource("1_wti07")
 
 [node name="main_character" type="AnimatedSprite2D" parent="."]
-z_index = 1
+z_index = 2
 position = Vector2(285, 384)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_qgxwb")
