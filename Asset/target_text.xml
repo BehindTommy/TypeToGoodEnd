@@ -2,7 +2,7 @@
 <contact>
 	<paragraph name="main01">
 		<line>1事实上就是这样的</line>
-		<line>这句话结束检查是否进支线</line>
+		<line>(这句话结束检查是否进支线)</line>
 	</paragraph>
 	<paragraph name="main02">
 		<line>3事实上就是这样的</line>
